@@ -32,7 +32,9 @@ btnEnviar.addEventListener('click', ()=> {
     }
 
 
-    socket.emit('enviar-mensaje', payload );
+    socket.emit('enviar-mensaje', payload, ( id ) => {
+        console.log('Desde el server', id);
+    } );
 
     // console.log ( mensaje );
 })
